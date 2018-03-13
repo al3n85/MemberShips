@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace MemberShips.Entities
+{
+    [Table("Products")]
+    public class Product
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        [Required]
+        [MaxLength(255)]
+        public string Title { get; set; }
+        [MaxLength(1024)]
+        [DisplayName("Image Url")]
+        public string imageUrel  { get; set; }
+        [MaxLength(2048)]
+        public string Description  { get; set; }
+        public int ProductTypeId { get; set; }
+        public int ProductLinkTextId { get; set; }
+    }
+}
